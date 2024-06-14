@@ -1,12 +1,28 @@
 # imageGallery
-ImageGallery is a React application that showcases the integration of various advanced features like SASS for styling, TypeScript for type safety, and the usage of the Pexels API to fetch and display random images. This project serves as a practical example of how to combine these technologies in a modern web development workflow.
+<b>ImageGallery</b> is a React application that showcases the integration of various advanced features like SASS for styling, TypeScript for type safety, and the usage of the Pixabay API to fetch and display images based on the search text. This project serves as a practical example of how to combine these technologies in a modern web development workflow.
+
+# Screen Demo
+We can select any image and view its content such as, owner, size, tags.
+We can also view the stats such as number of likes, downloads, comments, views etc
+![image](https://github.com/ashikrai/ImageGallery/assets/41672214/28c8eb3c-f59c-40cc-ba05-a0b4fcc8c320)
+
+## Image
+We can switch image type between: Image / Illustration / Vector
+![image](https://github.com/ashikrai/ImageGallery/assets/41672214/8b9a3673-f232-491a-8ce2-db46d602802c)
+
+## Illustration
+![image](https://github.com/ashikrai/ImageGallery/assets/41672214/da1d3f6b-c0c1-4bb0-ab0d-f002063da163)
+
+## Vector
+![image](https://github.com/ashikrai/ImageGallery/assets/41672214/6d8264fb-f83f-492f-8606-eff5fa64e98c)
+
 
 ## Features
 
 - **React**: A JavaScript library for building user interfaces.
 - **TypeScript**: A superset of JavaScript that adds static typing.
 - **SASS**: A preprocessor scripting language that is interpreted or compiled into CSS.
-- **Pexels API**: Integration to fetch random images, or search images based on search-keywords.
+- **Pixabay API**: Integration to fetch random images, or search images based on search-keywords.
 
 ## Installation
 
@@ -21,9 +37,9 @@ ImageGallery is a React application that showcases the integration of various ad
    npm install
    ```
 
-3. Create a `.env` file in the root of the project and add your Pexels API key:
+3. Create a `.env` file in the root of the project and add your Pixabay API key:
    ```plaintext
-   REACT_APP_PEXELS_API_KEY=your_pexels_api_key
+   VITE_REACT_APP_PIXABAY_API_KEY=your_pixabay_api_key
    ```
 
 ## Usage
@@ -53,16 +69,21 @@ ImageGallery is a React application that showcases the integration of various ad
 imageGallery/
 ├── node_modules/
 ├── public/
-│   ├── logo.png
-│   └── ...
 ├── src/
 │   ├── assets/
-│       ├── sass
-│       ├── css
-│   ├── components/
+│       ├── css   (Auto generated CSS)
+│       ├── images (img resources e.g: logo)
+│       ├── interfaces (interface definition for Typescript)
+│       ├── sass  (SASS styling)
+│   ├── Components/
+│   │   ├── HeaderComponent.tsx
 │   │   ├── ImageCard.tsx
-│   │   ├── ImageList.tsx
 │   │   └── ...
+│   ├── Utils/
+│   │   ├── APIHelper.tsx   (For Apis)
+│   │   ├── constant.tsx    (For Constant)
+│   │   ├── ImageSearchSlice.tsx (For Redux)
+│   │   ├── store.tsx      (For Redux)
 │   ├── App.tsx
 │   ├── index.css
 │   ├── main.tsx
@@ -93,7 +114,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [SASS](https://sass-lang.com/)
-- [Pexels API](https://www.pexels.com/api/)
+- [Pixabay API](https://pixabay.com/api/docs/)
 
 ## Contact
 
