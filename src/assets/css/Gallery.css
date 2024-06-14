@@ -1,0 +1,130 @@
+.galleryContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 3% 2% 2% 2%;
+}
+.galleryContainer .gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.galleryContainer .gallery .imgContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: inherit;
+  margin: 0.5%;
+  background-color: rgba(152, 149, 149, 0.3);
+  border-radius: 7px;
+  box-shadow: 7px 7px 14px 0px rgba(219, 218, 218, 0.4);
+}
+.galleryContainer .gallery .imgContainer:hover {
+  box-shadow: 7px 7px 14px 0px rgb(177, 177, 177);
+  cursor: pointer;
+}
+.galleryContainer .gallery .imgContainer .imgs {
+  height: 100%;
+  border-radius: 7px;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  margin: 0% 3% 0% 3%;
+  justify-content: space-between;
+  font-size: 70%;
+  align-items: center;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer:hover .imageDataOverlay {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer .userLink {
+  margin-left: 2%;
+  padding: none;
+  color: black;
+  text-shadow: 0px 0px 11px white;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer .LikeCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer .LikeCount .likeIcon {
+  width: 21%;
+  height: 11%;
+  margin: 1%;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer .imageDataOverlay {
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0));
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer .imageDataOverlay .imageDimension {
+  margin-bottom: 0%;
+  margin-left: 2%;
+  font-size: 70%;
+  color: white;
+}
+.galleryContainer .gallery .imgContainer .imgDataContainer .imageDataOverlay .imageTags {
+  margin-top: 0%;
+  font-size: 90%;
+  margin-left: 2%;
+  color: white;
+}
+.galleryContainer .gallery .inactive {
+  opacity: 0.5;
+  filter: blur(0.5%);
+}
+.galleryContainer .pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1%;
+}
+.galleryContainer .pagination .pageBtn {
+  color: white;
+  background-color: rgb(115, 115, 248);
+}
+.galleryContainer .pagination .pageBtn:focus {
+  border: transparent;
+}
+.galleryContainer .pagination .pageBtnActive {
+  color: white;
+  background-color: rgb(115, 115, 248);
+}
+.galleryContainer .hide {
+  display: none;
+}
+.galleryContainer .show {
+  display: block;
+}
+.galleryContainer .classModal {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(7px);
+  background-color: rgba(236, 236, 236, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=Gallery.css.map */

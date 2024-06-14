@@ -1,3 +1,44 @@
+// This is for the Headercomponent
+@import "./variables";
+$header_width: 100%;
+$header_height: 27%;
+
 .galleryHeader{
-    
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    // width: $fullWidth;
+    // background-color: red;
+    @include flexColCenter();
+    // border: 2px solid red;
+    // flex: 1;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    // align-items: center;
+}
+.footer{
+    // margin: 2%;
+    text-align: right;
+    margin-right: 3%;
+    .text{
+        font-size: 70%;
+        line-height: 21%;
+    }
+}
+
+.logocontianer{
+    width: $fullWidth;
+    margin-top: 11%;
+    // height: 80%;
+    // border: 5px solid red;
+    // background-color: black;
+    @include flexColCenter();
+    align-items: center;
+    justify-content: flex-end;
+    .logo{
+        // aspect-ratio: 16 / 9;
+        width: 27%;
+        object-fit: contain;
+        // border: 5px solid green;
+    }
 }

@@ -1,0 +1,99 @@
+@import "./variables";
+
+$modalHeight: 90vh;
+$modalWidth: 95vw;
+$RoundBtn: 41px;
+
+.container{
+    height: $modalHeight;
+    width: $modalWidth;
+    padding: 2%;
+    // margin: 14%;
+    overflow: hidden;
+    // border: 2px solid red;
+    @include flexRowCenter;
+    // flex: 1;
+    .leftContainer{
+        position: relative;
+        height: 100%;
+        width: 30%;
+        // overflow: hidden;
+        box-shadow: 2px 2px 21px  rgb(193, 192, 192);        
+        border-radius: 21px 21px 21px 21px;
+        margin: 0% 1% 0% 0%;
+        overflow: hidden;
+        background-color: white;
+        .topAction{
+            @include flexRowCenter;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 2%;
+            .userAvatar{
+                @include flexRowCenter;
+                gap: 5%;
+                align-items: center;
+                margin: 2%;
+            }
+            .iconsGroup{
+                flex: 1;
+                @include flexRowCenter;
+                justify-content: flex-end;
+                .icons{
+                    cursor: pointer;
+                    right: 0%;
+                    background: rgb(221, 218, 218);
+                    margin: 1%;
+                    padding: 0.5%;
+                    border-radius: 100%;
+                }
+            }
+        }
+        .imageInfoContainer{
+            position: relative;
+            // border: 2px solid red;
+            height: 80vh;
+            padding-bottom: 5%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .imgContainer{
+                // position: relative;
+                .activeImage{
+                    width: 100%;
+                    // max-width: 20%;
+                    // height: 50%;
+                }
+            }
+            .infoContainer{
+                margin: 2%;
+                .ChipContainer{
+                    .chips{
+                        margin-right: 1%;
+                    }
+                }
+                .infos{
+                    padding: 0%;
+                    margin: 1%;
+                }
+                .infos_small{
+                    padding: 0%;
+                    margin: 1%;
+                    font-size: 80%;    
+                }
+                .linkBtn{
+                    background-color: rgb(60, 92, 199);
+                    border-radius: $RoundBtn $RoundBtn $RoundBtn $RoundBtn;
+                    padding: 2%;
+                    color: white;
+                    padding: 2% 4% 2% 4%;
+                }
+            }
+        }
+    }
+    .rightContainer{
+        height: 100%;
+        width: 70%;
+        // border: 2px solid blue;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}

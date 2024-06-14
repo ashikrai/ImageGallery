@@ -1,0 +1,27 @@
+// Variables
+$fullWidth: 100%;
+$borderRadius: 40px;
+$fullHeight: 100%;
+
+
+// mixins
+@mixin boxShadow{
+    // box-shadow: h-offset v-offset blur-radius spread-radius color;
+    box-shadow: 3px 3px 14px 0px rgb(216, 214, 214);
+}
+@mixin boxImgShadow{
+    // box-shadow: h-offset v-offset blur-radius spread-radius color;
+    box-shadow: 7px 7px 14px 0px rgb(177, 177, 177);
+}
+@mixin boxImgLightShadow{
+    // box-shadow: h-offset v-offset blur-radius spread-radius color;
+    box-shadow: 7px 7px 14px 0px rgb(219, 218, 218, 0.4);
+}
+@mixin flexColCenter{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexRowCenter{
+    display: flex;
+    flex-direction: row;
+}

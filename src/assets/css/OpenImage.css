@@ -1,0 +1,86 @@
+.container {
+  height: 90vh;
+  width: 95vw;
+  padding: 2%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.container .leftContainer {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  box-shadow: 2px 2px 21px rgb(193, 192, 192);
+  border-radius: 21px 21px 21px 21px;
+  margin: 0% 1% 0% 0%;
+  overflow: hidden;
+  background-color: white;
+}
+.container .leftContainer .topAction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2%;
+}
+.container .leftContainer .topAction .userAvatar {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  align-items: center;
+  margin: 2%;
+}
+.container .leftContainer .topAction .iconsGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.container .leftContainer .topAction .iconsGroup .icons {
+  cursor: pointer;
+  right: 0%;
+  background: rgb(221, 218, 218);
+  margin: 1%;
+  padding: 0.5%;
+  border-radius: 100%;
+}
+.container .leftContainer .imageInfoContainer {
+  position: relative;
+  height: 80vh;
+  padding-bottom: 5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container .leftContainer .imageInfoContainer .imgContainer .activeImage {
+  width: 100%;
+}
+.container .leftContainer .imageInfoContainer .infoContainer {
+  margin: 2%;
+}
+.container .leftContainer .imageInfoContainer .infoContainer .ChipContainer .chips {
+  margin-right: 1%;
+}
+.container .leftContainer .imageInfoContainer .infoContainer .infos {
+  padding: 0%;
+  margin: 1%;
+}
+.container .leftContainer .imageInfoContainer .infoContainer .infos_small {
+  padding: 0%;
+  margin: 1%;
+  font-size: 80%;
+}
+.container .leftContainer .imageInfoContainer .infoContainer .linkBtn {
+  background-color: rgb(60, 92, 199);
+  border-radius: 41px 41px 41px 41px;
+  padding: 2%;
+  color: white;
+  padding: 2% 4% 2% 4%;
+}
+.container .rightContainer {
+  height: 100%;
+  width: 70%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=OpenImage.css.map */

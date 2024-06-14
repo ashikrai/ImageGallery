@@ -1,0 +1,82 @@
+@import "./variables";
+
+$Chipborder: 41px;
+
+.searchContainer{
+    width: 99%;
+    // border: 2px solid red;
+    @include flexColCenter();
+    align-items: center;
+    margin-top: 1.4%;
+    transition: all 0.3s ease-in-out;
+    .searchInput{
+        width: 40%;
+        padding: 1%;
+        // margin: 1%;
+        border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+        border: 0.2px solid rgb(227, 220, 220);
+
+        &:hover{
+            @include boxShadow;
+        }
+        &:focus{
+            @include boxShadow;
+            outline: transparent;
+            border: 0.2px solid rgb(227, 220, 220, 0);
+        }
+    }
+    .pixabay_mention{
+        font-size: 70%;
+        color: rgb(180, 178, 178);
+    }
+}
+
+.miniSearchContainer{
+    // width: 99%;
+    // border: 2px solid black;
+    transition: all 0.3s ease-in-out;
+    @include flexRowCenter();
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.4%;
+    // border: 2px solid red;
+    .logo{
+        width: 14%;
+        cursor: pointer;
+        // border: 2px solid green;
+    };
+    .searchInput{
+        width: 40%;
+        padding: 0.9%;
+        margin-left: 1%;
+        border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+        border: 0.2px solid rgb(227, 220, 220);
+
+        &:hover{
+            @include boxShadow;
+        }
+        &:focus{
+            @include boxShadow;
+            outline: none;
+            border: none;
+        }
+    }
+}
+.baseBorder{
+    margin-top: 1%;
+    border-bottom: 1px solid rgb(229, 226, 226);
+    margin-bottom: 1%;
+}
+.ChipContainer{
+    @include flexRowCenter;
+    margin-left: 2%;
+    .datatypes{
+        margin-right: 0.3%;
+        // display: none;
+    }
+    .activeType{
+        background-color: rgb(111, 111, 245);
+        border-radius: $Chipborder $Chipborder $Chipborder $Chipborder;
+        color: white;
+    }
+}

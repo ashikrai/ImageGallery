@@ -1,0 +1,150 @@
+@import "./variables";
+
+$galleryMargin: 2%;
+$galleryImgRadius: 7px;
+
+.galleryContainer{
+    @include flexColCenter();
+    margin: 3% $galleryMargin 2% $galleryMargin;
+    .gallery{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1;
+        // gap: 1%;
+        .imgContainer{
+            @include flexColCenter;
+            position: relative;
+            width: inherit;
+            margin: 0.5%;
+            // backdrop-filter: blur(3px);
+            background-color: rgba(152, 149, 149, 0.3);
+            // height: 40%;
+            border-radius: $galleryImgRadius;
+            // justify-content: flex-start;
+            // align-items: flex-start;
+            // border: 2px solid brown;
+            // flex: 1;
+            @include boxImgLightShadow;
+            &:hover{
+                @include boxImgShadow;
+                cursor: pointer;
+            }
+            .imgs{
+                height: 100%;
+                border-radius: $galleryImgRadius;
+            }
+            .imgDataContainer{
+                width: inherit;
+                @include flexRowCenter();
+                margin: 0% 3% 0% 3%;
+                justify-content: space-between;
+                font-size: 70%;
+                align-items: center;
+                &:hover{
+                    .imageDataOverlay{
+                        opacity: 1;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+                .userLink{
+                    margin-left: 2%;
+                    padding: none;
+                    color: black;
+                    text-shadow: 0px 0px 11px white;
+                    // border: 2px solid blue;
+                }
+                .LikeCount{
+                //     padding: 0%;
+                //     margin: 0%;
+                    // height: 7%;
+                    // border: 2px solid red;
+                    @include flexRowCenter;
+                    // width: 10%;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .likeIcon{
+                        // display: none;
+                        // opacity: 0.2;
+                        width: 21%;
+                        height: 11%;
+                        margin: 1%;
+                        // height: auto;
+                        // border: 2px solid red;
+                    }
+                }
+                .imageDataOverlay{
+                    opacity: 0.5;
+                    transition: all 0.3s ease-in-out;
+                    position: absolute;
+                    top: 0%;
+                    left: 0%;
+                    height: 100%;
+                    pointer-events: none;
+                    width: 100%;
+                    @include flexColCenter;
+                    justify-self: flex-start;
+                    align-items: flex-start;
+                    gap: 0px;
+                    // border: 2px solid green;
+                    background: linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3),rgba(255, 255, 255, 0));
+                    .imageDimension{
+                        margin-bottom: 0%;
+                        margin-left: 2%;
+                        font-size: 70%;
+                        color: white;
+                    }
+                    .imageTags{
+                        margin-top: 0%;
+                        font-size: 90%;
+                        // border: 2px solid red;
+                        margin-left: 2%;
+                        color: white;
+                    }
+                    
+                }             
+            }
+            
+        };
+        .inactive{
+            opacity: 0.5;
+            filter: blur(0.5%);
+        }
+    }
+    .pagination{
+        @include flexRowCenter;
+        justify-content: flex-end;
+        gap: 1%;
+        .pageBtn{
+            color: white;
+            background-color: rgb(115, 115, 248);
+            &:focus{
+                
+                border: transparent;
+            }
+        }
+        .pageBtnActive{
+            color: white;
+            background-color: rgb(115, 115, 248);
+        }
+    }
+    .hide{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+    .classModal{
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        height: 100vh;
+        width: 100vw;
+        backdrop-filter: blur(7px);
+        background-color: rgba(236, 236, 236, 0.5);
+        overflow: hidden;
+        @include flexRowCenter;
+        justify-content: center;
+        align-items: center;
+    }
+}
