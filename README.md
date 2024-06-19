@@ -118,6 +118,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or feedback, please reach out at [ashikthulungrai7@example.com](mailto:ashikthulungrai7@example.com).
+For any inquiries or feedback, please reach out at [ashikthulungrai7@gmail.com](mailto:ashikthulungrai7@gmail.com).
 
 Enjoy building with ImageGallery!
