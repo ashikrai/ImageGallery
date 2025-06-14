@@ -1,3 +1,5 @@
+# 🖼️ React Image Search App using Pixabay API![image](https://github.com/user-attachments/assets/351ae175-e0e3-448a-b4ea-82669d1ebe14)
+
 # imageGallery
 A modern React application that allows users to search for images using the Pixabay API. Users can search images based on keywords and filter results by type — photo, illustration, or vector. 
 Each image result displays detailed metadata such as tags, uploader, likes, downloads, views, and comments.
