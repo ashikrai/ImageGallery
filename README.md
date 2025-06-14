@@ -1,20 +1,60 @@
 # imageGallery
-<b>ImageGallery</b> is a React application that showcases the integration of various advanced features like SASS for styling, TypeScript for type safety, and the usage of the Pixabay API to fetch and display images based on the search text. This project serves as a practical example of how to combine these technologies in a modern web development workflow.
+A modern React application that allows users to search for images using the Pixabay API. Users can search images based on keywords and filter results by type — photo, illustration, or vector. 
+Each image result displays detailed metadata such as tags, uploader, likes, downloads, views, and comments.
 
-# Screen Demo
+<b>ImageGallery</b> showcases the integration of various advanced features like SASS for styling, TypeScript for type safety, and the usage of the Pixabay API to fetch and display images based on the search text. This project serves as a practical example of how to combine these technologies in a modern web development workflow.
+
+# 🚀 Features
+🔍 Real-time Image Search using Pixabay API
+
+🧭 Filter results by category: `Photo`, `Vector`, `Illustration`
+
+🖼️ Image gallery with preview
+
+ℹ️ View image details:
+
+* Tags   
+  -  User who uploaded
+  -  Number of Likes
+  -  Downloads
+  -  Comments
+  -  Views
+
+📱 Responsive design (works well on mobile and desktop)
+
+# 1. 🔍 Search Interface
+Users can type their query and the image will be retireved using the pixabay API and displayed in user-friendly way
+![image](https://github.com/user-attachments/assets/302ed5eb-50e1-4c99-80ea-4ba81f05c678)
+
+# 2. 🖼️ Image Gallery
 We can select any image and view its content such as, owner, size, tags.
 We can also view the stats such as number of likes, downloads, comments, views etc
-![image](https://github.com/ashikrai/ImageGallery/assets/41672214/28c8eb3c-f59c-40cc-ba05-a0b4fcc8c320)
+![image](https://github.com/user-attachments/assets/617f5d25-c116-4902-b265-e1705fff8046)
 
-## Image
+
+# 3. 📊 Image Details
+Clicking on an image displays metadata like:
+- Tags
+- User name
+- Likes 👍
+- Downloads ⬇️
+- Views 👁️
+- Comments 💬
+
+![image](https://github.com/user-attachments/assets/8162336a-b114-434e-a2c3-ebf904970928)
+![image](https://github.com/user-attachments/assets/f2269c52-58c3-47ff-b723-c59498958e80)
+
+
+
+## 4. Image Types
 We can switch image type between: Image / Illustration / Vector
-![image](https://github.com/ashikrai/ImageGallery/assets/41672214/8b9a3673-f232-491a-8ce2-db46d602802c)
+![image](https://github.com/user-attachments/assets/99614bf5-62fc-4499-a353-7561f78d4b31)
 
 ## Illustration
-![image](https://github.com/ashikrai/ImageGallery/assets/41672214/da1d3f6b-c0c1-4bb0-ab0d-f002063da163)
+![image](https://github.com/user-attachments/assets/936a7ad3-7184-4a32-845e-55effeb895c5)
 
 ## Vector
-![image](https://github.com/ashikrai/ImageGallery/assets/41672214/6d8264fb-f83f-492f-8606-eff5fa64e98c)
+![image](https://github.com/user-attachments/assets/6618564a-8215-44fe-aea7-5457f12bf51b)
 
 
 ## Features
@@ -37,7 +77,10 @@ We can switch image type between: Image / Illustration / Vector
    npm install
    ```
 
-3. Create a `.env` file in the root of the project and add your Pixabay API key:
+3. Get Pixabay API Key
+Sign up at Pixabay  
+Visit your API settings to generate an API key  
+Create a `.env` file in the root of the project and add your Pixabay API key:  
    ```plaintext
    VITE_REACT_APP_PIXABAY_API_KEY=your_pixabay_api_key
    ```
