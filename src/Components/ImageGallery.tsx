@@ -30,9 +30,9 @@ export default function ImageGallery() {
     const PIXABAY_URL= `https://pixabay.com/api/?key=${API_KEY}&q=${searchKey}&image_type=${dataTypes[dataType]}&page=${pageNumber}&per_page=${perPageImage}`
     
 
-    // console.log("inside imageGallery")
+    // console.log("inside imageGallery",PIXABAY_URL)
     useEffect(()=> {
-        console.log("called once ",searchKey)
+        // console.log("called once ",searchKey)
         // setSearching(true)
         getImageData();
     },[])
@@ -51,14 +51,10 @@ export default function ImageGallery() {
 
     const getSearchImageData= async() => {
         try{
-            console.log("getting search image data111 ",searchKey)
             const data= await getInitialImage(PIXABAY_URL);
-            console.log(data)
             setImages(data)
             setSearching(false)
-            if(data.total > 0)
-                dispatch(setSearchImage(false))
-            //     dispatch(setSearchInput(""))
+            dispatch(setSearchImage(false))
         }catch (error){
             console.error(error)
             setImages(null)
@@ -67,12 +63,18 @@ export default function ImageGallery() {
     }
 
     const getImageData= async () =>{
+        if(!API_KEY){
+            console.error("API key is not set")
+            return;
+        }
         try{
-            console.log("getting image data")
+            // console.log("getting image data")
             // const option= getAPIoptions(API_KEY);
             const data= await getInitialImage(PIXABAY_URL);
-            // console.log(data)
-            setImages(data)
+            if (data === null || data === undefined)
+                setImages(null)
+            else
+                setImages(data)
             // setSearchImage(false)
         }catch (error){
             console.error(error)
@@ -80,16 +82,10 @@ export default function ImageGallery() {
             setImages(null)
         }
     }
-    const openImage= (data:imageData) => {
+    const openImage= (index:number) => {
+        // console.log("open image",index)
         setOpenImageFlag(true);
-        setActiveImageData(data);
-    }
-
-    const nextImage=()=>{
-    }
-
-    const prevImage=()=>{
-        
+        setActiveImageData(images?.hits? images?.hits[index] : null);
     }
     if (images === null)
         return(
@@ -106,7 +102,7 @@ export default function ImageGallery() {
                     </div>
                 :
                     <div>
-                        Search result for: {lastSearch} ({images?.totalHits}) results {pageNumber}
+                        Search result for: {lastSearch} ({images?.totalHits}) results 
                     </div>
                 }
             </div>
@@ -121,12 +117,12 @@ export default function ImageGallery() {
                             {
                                 images.hits?(
                                     searchCount === 1 ?
-                                        images.hits.slice(0,perPageImageStart).map((data:imageData) =>(
-                                            <ImageCard onClick={openImage} searching={searching} data={data} />
+                                        images.hits.slice(0,perPageImageStart).map((data:imageData, index:number) =>(
+                                            <ImageCard key={index} onClick={openImage} searching={searching} index={index} data={data} />
                                         ))
                                         :
-                                        images.hits.map((data:imageData) =>(
-                                            <ImageCard onClick={openImage} searching={searching} data={data} />
+                                        images.hits.map((data:imageData, index:number) =>(
+                                            <ImageCard key={index} onClick={openImage} searching={searching} index={index} data={data} />
                                         ))
                                 )
                                 :(null)

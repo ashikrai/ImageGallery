@@ -23,7 +23,7 @@ export default function SearchComponent(props:searchInterface) {
         }
     }
     const homePage= ()=>{
-        console.log("Calling reset")
+        // console.log("Calling reset")
         dispatch(reset())
     }
 
@@ -61,7 +61,7 @@ export default function SearchComponent(props:searchInterface) {
 
                 {
                     dataTypes.map((data, index) => (
-                        <div className={`datatypes `} >
+                        <div key={index} className={`datatypes `} >
                             <Chip color={index === dataType ? "success" : "default"} label={data} key={index} onClick={() => {dispatch(setDataType(index))}} />
                         </div>
                     ))

@@ -38,7 +38,7 @@ export const imageSearchSlice= createSlice({
                 state.searchHistory.push(state.searchInput)
                 state.searchCount++
             }
-            console.log("setSearchImage ",action.payload)
+            // console.log("setSearchImage ",action.payload)
         },
         reset: (state) => {
             state.searchCount= 1;
@@ -48,7 +48,7 @@ export const imageSearchSlice= createSlice({
             state.searchHistory= [default_SearchKey];
             state.dataType= 0;
             // state.pageNumber= 1
-            console.log("reset called: ",state.searchCount,state.searchInput)
+            // console.log("reset called: ",state.searchCount,state.searchInput)
         },
         setDataType: (state, action: PayloadAction<number>) => {
             state.dataType= action.payload

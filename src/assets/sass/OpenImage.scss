@@ -57,16 +57,22 @@ $RoundBtn: 41px;
             overflow-y: auto;
             .imgContainer{
                 // position: relative;
+                height: 53%;
+                background-color: rgba(216, 210, 210, 0.3);
                 .activeImage{
                     width: 100%;
-                    // max-width: 20%;
-                    // height: 50%;
+                    height: 100%;
+                    object-fit: contain; /* or cover, depending on your goal */
                 }
             }
             .infoContainer{
                 margin: 2%;
                 .ChipContainer{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex: 1;
                     .chips{
+                        margin-top: 1%;
                         margin-right: 1%;
                     }
                 }

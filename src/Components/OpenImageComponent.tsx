@@ -1,6 +1,6 @@
 import { imageData, imageDataWrapper } from "../assets/interfaces/interfaces"
 import "../assets/css/OpenImage.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImageCard from "./ImageCard";
 import { Avatar, Button, Chip } from "@mui/material";
 import { CloseRounded, KeyboardArrowLeftRounded, KeyboardArrowRightRounded } from "@mui/icons-material";
@@ -14,9 +14,51 @@ interface openImageInterface{
 
 export default function OpenImageComponent(props:openImageInterface) {
     const [activeImage, setActiveImage]= useState<imageData|null |undefined>(props.image);
+    const [activeImageIndex, setActiveImageIndex]= useState<number>(-1);
+    const [activeImageTag, setActiveImageTag]= useState<string[]>(activeImage?.tags?activeImage?.tags.split(", "):[]);
+    const DEFAULT_CHIP_COUNT_MAX= 7
+    const [CHIP_COUNT_MAX, setCHIP_COUNT_MAX]= useState<number>(DEFAULT_CHIP_COUNT_MAX)
+
+
+    const adjustChipCount= () => {
+        if(CHIP_COUNT_MAX === DEFAULT_CHIP_COUNT_MAX){
+            setCHIP_COUNT_MAX(Number.MAX_SAFE_INTEGER);
+        } else {
+            setCHIP_COUNT_MAX(DEFAULT_CHIP_COUNT_MAX);
+        }
+    }
+
+    useEffect(() => {
+        function handleKeyDown(event: KeyboardEvent) {
+          if (event.key === 'Escape') {
+            console.log('ESC pressed');
+            props.closeModal(false)
+          }
+        }
+    
+        window.addEventListener('keydown', handleKeyDown);
+        
+        // Cleanup on unmount
+        return () => {
+          window.removeEventListener('keydown', handleKeyDown);
+        };
+      }, []);
+
+    const openImage= (index:number) => {
+        if(props.imageList.hits == null)
+            return
+        if(index < 0)
+            index=  props.imageList.hits.length-1
+        else if(index >= props.imageList.hits.length)
+            index= 0
+        setActiveImageIndex(index)
+        setActiveImageTag(props.imageList.hits[index].tags.split(", "));
+        setActiveImage(props.imageList.hits[index]);
+    }
+
     if(props.image)
         return (
-            <div className="container">
+            <div className="container" >
                 <div className="leftContainer">
                     <div className="topAction">
                         <div className="userAvatar">
@@ -24,8 +66,8 @@ export default function OpenImageComponent(props:openImageInterface) {
                             <p>{activeImage?.user}</p>
                         </div>
                         <div className="iconsGroup">
-                            <KeyboardArrowLeftRounded className="icons" fontSize="medium" />
-                            <KeyboardArrowRightRounded className="icons" fontSize="medium"/>
+                            <KeyboardArrowLeftRounded onClick={()=>openImage(activeImageIndex-1)} className="icons" fontSize="medium" />
+                            <KeyboardArrowRightRounded onClick={()=>openImage(activeImageIndex+1)} className="icons" fontSize="medium"/>
                             <CloseRounded className="icons" fontSize="medium" onClick={() => props.closeModal(false)} />
                         </div>
                     </div>
@@ -35,11 +77,14 @@ export default function OpenImageComponent(props:openImageInterface) {
                         </div>
                         <div className="infoContainer">
                             <div className="ChipContainer"> 
-                                {activeImage?.tags.split(", ").map((tags:string, index:number)=> (
-                                    <Chip className="chips" label={tags} key={index}/>
+                                {activeImageTag.map((tags:string, index:number)=> (
+                                    <Chip className={`${index > CHIP_COUNT_MAX ? "hide": "chips"}`} label={tags} key={index}/>
                                 ))}
+                                { activeImageTag.length > CHIP_COUNT_MAX ?
+                                    <Chip style={{fontWeight: 'bolder'}} onClick={adjustChipCount} className="chips" label={"..."} />
+                                 :  <Chip style={{fontWeight: 'bolder'}} onClick={adjustChipCount} className="chips" label={"< show less"} />}
                             </div>
-                            <p className="infos_small">The image search is powered by <a href="https://pixabay.com/" target="_blank">pixabay</a></p>
+                            <p className="infos_small">The image search is powered by <a rel="noopener" href="https://pixabay.com/" target="_blank">pixabay</a></p>
                             <p className="infos">Image Dimension: {activeImage?.imageHeight} X {activeImage?.imageWidth} (H X W)</p>
                             <p className="infos">Uploaded by: {activeImage?.user}</p>
                             <p className="infos">Downloads: {activeImage?.downloads}</p>
@@ -53,11 +98,11 @@ export default function OpenImageComponent(props:openImageInterface) {
                 <div className="rightContainer">
                     <div className="gallery">
                         {
-                            props.imageList.hits?.map((data:imageData) => (
+                            props.imageList.hits?.map((data:imageData, index:number) => (
                                 (data.id === activeImage?.id) ? 
                                     null
                                 :
-                                    <ImageCard onClick={setActiveImage} searching={false} data={data} />
+                                    <ImageCard key={index} onClick={openImage} searching={false} index={index}data={data} />
                             ))
                         }
                     </div>
