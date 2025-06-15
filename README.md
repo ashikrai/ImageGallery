@@ -6,6 +6,9 @@ Each image result displays detailed metadata such as tags, uploader, likes, down
 
 <b>ImageGallery</b> showcases the integration of various advanced features like SASS for styling, TypeScript for type safety, and the usage of the Pixabay API to fetch and display images based on the search text. This project serves as a practical example of how to combine these technologies in a modern web development workflow.
 
+# Live Demo
+https://ashikrai.github.io/ImageGallery/
+
 # 🚀 Features
 🔍 Real-time Image Search using Pixabay API
 
