@@ -3,7 +3,7 @@ import "../assets/css/OpenImage.css"
 import { useEffect, useState } from "react";
 import ImageCard from "./ImageCard";
 import { Avatar, Button, Chip } from "@mui/material";
-import { CloseRounded, DownloadForOfflineRounded, IosShare, IosShareRounded, IosShareSharp, KeyboardArrowLeftRounded, KeyboardArrowRightRounded } from "@mui/icons-material";
+import { CloseRounded, DownloadForOfflineRounded, IosShare, KeyboardArrowLeftRounded, KeyboardArrowRightRounded } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { addAlertMessage } from "../utils/utilsSlice";
 

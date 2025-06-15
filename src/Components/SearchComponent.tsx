@@ -13,7 +13,7 @@ interface searchInterface{
     count: number
 }
 
-const CustomAutocomplete = styled(Autocomplete)(({ theme }) => ({
+const CustomAutocomplete = styled(Autocomplete)(({}) => ({
     width: '50%',
     padding: '1%',
   }));
