@@ -23,7 +23,7 @@ export default function ImageGallery() {
     const searchImageFlag= useSelector((state:RootState) => state.search.searchImage)
     const searchKey= useSelector((state:RootState) => state.search.searchKey)
     const searchCount= useSelector((state:RootState) => state.search.searchCount)
-    const lastSearch= useSelector((state:RootState) => state.search.searchHistory[state.search.searchCount-1])
+    const lastSearch= useSelector((state:RootState) => state.search.searchHistory[state.search.searchHistory.length-1])
     const dispatch= useDispatch()
 
     const API_KEY= import.meta.env.VITE_REACT_APP_PIXABAY_API_KEY as string
@@ -50,6 +50,7 @@ export default function ImageGallery() {
     },[dataType, pageNumber])
 
     const getSearchImageData= async() => {
+        // console.log("Calling the API",PIXABAY_URL);
         try{
             const data= await getInitialImage(PIXABAY_URL);
             setImages(data)
@@ -93,8 +94,8 @@ export default function ImageGallery() {
             {lastSearch}: searching
         </div>
         )
-        return (
-            <div className="galleryContainer">
+    return (
+        <div className="galleryContainer">
             <div className={searchCount === 1 ? "hide" : "show"}>
                 {searching ?
                     <div>
@@ -106,7 +107,7 @@ export default function ImageGallery() {
                     </div>
                 }
             </div>
-            <div >
+            <div>
                 {images.total === 0 ?
                     <div>
                         There are no images found for search input: {lastSearch}

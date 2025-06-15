@@ -1,6 +1,6 @@
 .container {
-  height: 90vh;
-  width: 95vw;
+  height: 92vh;
+  width: 97vw;
   padding: 2%;
   overflow: hidden;
   display: flex;
@@ -82,11 +82,26 @@
   font-size: 80%;
 }
 .container .leftContainer .imageInfoContainer .infoContainer .linkBtn {
-  background-color: rgb(60, 92, 199);
   border-radius: 41px 41px 41px 41px;
-  padding: 2%;
   color: white;
   padding: 2% 4% 2% 4%;
+  margin-right: 1%;
+}
+.container .leftContainer .imageInfoContainer .infoContainer .linkBtn.Blue {
+  background-color: rgb(60, 92, 199);
+}
+.container .leftContainer .imageInfoContainer .infoContainer .linkBtn.Green {
+  background-color: rgb(141, 214, 45);
+}
+.container .leftContainer .imageInfoContainer .infoContainer .linkBtn.Gray {
+  background-color: rgb(182, 185, 178);
+}
+.container .leftContainer .imageInfoContainer .infoContainer .linkBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.container .leftContainer .imageInfoContainer .infoContainer .linkBtn:focus-visible {
+  outline: none;
 }
 .container .rightContainer {
   height: 100%;

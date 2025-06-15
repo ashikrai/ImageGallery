@@ -143,8 +143,8 @@ $galleryImgRadius: 7px;
         position: fixed;
         top: 0%;
         left: 0%;
-        height: 100vh;
-        width: 100vw;
+        height: 100dvh;
+        width: 100dvw;
         -webkit-backdrop-filter: blur(7px);
         backdrop-filter: blur(7px);
         background-color: rgba(236, 236, 236, 0.5);
@@ -152,5 +152,6 @@ $galleryImgRadius: 7px;
         @include flexRowCenter;
         justify-content: center;
         align-items: center;
+        z-index: 1;
     }
 }
