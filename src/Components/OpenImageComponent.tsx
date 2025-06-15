@@ -151,7 +151,7 @@ export default function OpenImageComponent(props:openImageInterface) {
                             <p className="infos">Likes: {activeImage?.likes}</p>
                             <p className="infos">Views: {activeImage?.views}</p>
                             <p className="infos">Comments: {activeImage?.comments}</p>
-                            <Button href={activeImage?.pageURL} target="_blank" className="linkBtn Blue" endIcon={<KeyboardArrowRightRounded />}> Visit Page</Button>
+                            <Button rel="noopener noreferrer" href={activeImage?.pageURL??'#'} target="_blank" className="linkBtn Blue" endIcon={<KeyboardArrowRightRounded />}> Visit Page</Button>
                             <Button onClick={() => downloadImage(activeImage?.largeImageURL,activeImage?.previewURL)} className="linkBtn Green" endIcon={<DownloadForOfflineRounded/>}> Download</Button>
                             <Button onClick={() => shareImage(activeImage?.largeImageURL)} className="linkBtn Gray" endIcon={<IosShare/>}> Share</Button>
                         </div>
