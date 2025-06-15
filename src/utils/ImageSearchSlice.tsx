@@ -35,7 +35,8 @@ export const imageSearchSlice= createSlice({
         setSearchImage: (state, action: PayloadAction<boolean>) => {
             state.searchImage= action.payload
             if(action.payload){
-                state.searchHistory.push(state.searchInput)
+                if(!state.searchHistory.includes(state.searchInput) && state.searchInput != "")
+                    state.searchHistory.push(state.searchInput)
                 state.searchCount++
             }
             // console.log("setSearchImage ",action.payload)

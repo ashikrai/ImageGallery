@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
 import imageSearchReducer from "./ImageSearchSlice"
+import utilsReducer from "./utilsSlice"
 
 export const Store= configureStore({
     reducer: {
         search: imageSearchReducer,
+        alert: utilsReducer
     }
 })
 
